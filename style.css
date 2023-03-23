@@ -1,0 +1,182 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--primary-color-01: hsl(158, 36%, 37%);
+	--primary-color-02: hsl(30, 38%, 92%);
+	--neutral-color-01: hsl(212, 21%, 14%);
+	--neutral-color-02: hsl(228, 12%, 48%);
+	--neutral-color-03: hsl(0, 0%, 100%);
+}
+
+/* General Styles */
+
+html {
+	background-color: var(--primary-color-02);
+}
+
+body {
+	color: var(--neutral-color-02);
+	font-size: 0.875rem;
+	font-family: 'Montserrat', sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+/* General Classes */
+
+.img {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+}
+
+.container {
+	width: 90%;
+	max-width: 343px;
+	background-color: var(--neutral-color-03);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+/* Typography */
+
+h1,
+.big-text {
+	font-family: 'Fraunces', serif;
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+h1 {
+	color: var(--neutral-color-01);
+	line-height: 1.1;
+	margin-bottom: 0.5em;
+}
+
+p {
+	line-height: 1.5;
+	font-weight: 500;
+}
+
+.big-text {
+	color: var(--primary-color-01);
+}
+
+.text-container .small-text {
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: 0.75rem;
+	margin-bottom: 1em;
+}
+
+.commercial-blurb {
+	margin-bottom: 1.786em;
+}
+
+/* Image Section */
+.img-section {
+	background-image: url('images/image-product-desktop.jpg');
+	background-position: center;
+	object-fit: cover;
+	background-repeat: no-repeat;
+}
+
+/* Text Section */
+
+.text-section {
+	padding: 1.714em;
+}
+
+.price-container {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	margin-bottom: 0.625em;
+}
+
+.price-container .small-text {
+	text-decoration: line-through;
+}
+
+.btn {
+	width: 100%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.786em;
+	padding: 0.786em 0;
+	border-radius: 8px;
+	border: none;
+	background-color: var(--primary-color-01);
+	color: var(--neutral-color-03);
+	font-family: inherit;
+	font-weight: 700;
+  transition: background-color ease 0.4s;
+}
+
+.btn img {
+	width: 16px;
+}
+
+.btn:hover, .btn:focus {
+  background-color: var(--neutral-color-01);
+}
+
+.btn:active {
+  background-color: var(--neutral-color-02);
+}
+
+/* FEM */
+
+footer {
+	margin-top: 2em;
+}
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+}
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+	.mobile-only {
+		display: block;
+	}
+
+	.desktop-only {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.container {
+		max-width: 600px;
+		display: grid;
+		grid-template-columns: repeat(2, 300px);
+	}
+
+	.container > * {
+		width: 300px;
+	}
+
+	.mobile-only {
+		display: none;
+	}
+
+	.desktop-only {
+		display: block;
+	}
+}
